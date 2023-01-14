@@ -1,7 +1,7 @@
-﻿using QuantumEngine.AdvancedSystem.Transistor.Interfaces;
+﻿using QuantumEngine.UnrealMotion.SemanticSystem.Interfaces;
 
 
-namespace QuantumEngine.AdvancedSystem.SemanticDomain.Transistor
+namespace QuantumEngine.UnrealMotion.SemanticSystem.DocumentTransisitor
 {
     public sealed partial class XDocumentTransistor
     {

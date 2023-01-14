@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace QuantumEngine.AdvancedSystem.Transistor.PrimitiveTypes
+namespace QuantumEngine.UnrealEngine.SemanticSystem.PrimitiveTypes
 {
     internal class PrimitivesTypesInterpreter
     {

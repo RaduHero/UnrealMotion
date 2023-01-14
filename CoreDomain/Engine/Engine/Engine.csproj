@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <Reference Include="XDocumentTransistor">
-      <HintPath>..\..\XDocumentTransistor\XDocumentTransistor\bin\Release\net7.0\XDocumentTransistor.dll</HintPath>
+      <HintPath>..\..\..\SemanticDomain\XDocumentTransistor\XDocumentTransistor\bin\Release\net7.0\XDocumentTransistor.dll</HintPath>
     </Reference>
   </ItemGroup>
 

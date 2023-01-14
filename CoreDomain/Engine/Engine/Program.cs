@@ -1,8 +1,7 @@
-﻿using QuantumEngine.AdvancedSystem.FactoryDomain.Engine;
-using QuantumEngine.AdvancedSystem.Transistor.Interfaces;
-using QuantumEngine.AdvancedSystem.SemanticDomain.Transistor;
+﻿using QuantumEngine.UnrealMotion.SemanticSystem.DocumentTransisitor;
+using QuantumEngine.UnrealMotion.SemanticSystem.Interfaces;
 
-namespace QuantumEngine.AdvancedSystem.CoreDomain.Engine
+namespace QuantumEngine.UnrealMotion.CoreSystem.Engine
 {
     public class Program
     {

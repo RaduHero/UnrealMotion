@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace QuantumEngine.AdvancedSystem.Transistor.Interfaces
+
+namespace QuantumEngine.UnrealMotion.SemanticSystem.Interfaces
 {
     public interface IXDocumentTransistor
     {
