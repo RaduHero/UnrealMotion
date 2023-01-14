@@ -1,4 +1,5 @@
-﻿using QuantumEngine.UnrealMotion.SemanticSystem.DocumentTransisitor;
+﻿using QuantumEngine.UnrealMotion.CoreSystem.Interfaces;
+using QuantumEngine.UnrealMotion.SemanticSystem.DocumentTransisitor;
 using QuantumEngine.UnrealMotion.SemanticSystem.Interfaces;
 
 namespace QuantumEngine.UnrealMotion.CoreSystem.Engine
@@ -7,31 +8,26 @@ namespace QuantumEngine.UnrealMotion.CoreSystem.Engine
     {
         public static int Main(string[] args)
         {
-            if(args.Length > 0)
+            #if DEBUG
+
+            if(args.Length != 1)
             {
-                String filePath = @$"{args[0]}";
-                Console.WriteLine(filePath);
+                var argument = Console.ReadLine() ?? String.Empty;
+                args = new string[1] { argument };
             }
+
+            #endif
+
+            IFilePathValidation filePathValidation = Factory.CreateInstance<IFilePathValidation, FilePath>();
+            if (!filePathValidation.IsValidated(args))
+                return -1;
 
             IXDocumentTransistor xDocTransistor = Factory.CreateInstance<IXDocumentTransistor, XDocumentTransistor>();
 
-             xDocTransistor.Start();
+            xDocTransistor.Start();
 
-            Console.WriteLine(xDocTransistor.ToString());
-            Program.StopProgram();
 
             return 0;
-        }
-
-        public static void StopProgram()
-        {
-
-            var x = Console.ReadLine();
-
-            while (x != "stop")
-            {
-                x = Console.ReadLine();
-            }
         }
 
     }
