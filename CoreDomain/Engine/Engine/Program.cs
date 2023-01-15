@@ -1,31 +1,31 @@
-﻿using QuantumEngine.UnrealMotion.CoreSystem.Interfaces;
+﻿using Engine;
+using QuantumEngine.UnrealMotion.CoreSystem.Interfaces;
 using QuantumEngine.UnrealMotion.SemanticSystem.DocumentTransisitor;
 using QuantumEngine.UnrealMotion.SemanticSystem.Interfaces;
 
 namespace QuantumEngine.UnrealMotion.CoreSystem.Engine
 {
-    public class Program
+    internal class Program
     {
         public static int Main(string[] args)
         {
-            #if DEBUG
 
-            if(args.Length != 1)
-            {
-                var argument = Console.ReadLine() ?? String.Empty;
-                args = new string[1] { argument };
-            }
+            Logger.LogStart();
 
-            #endif
+            IFileAssessment file = IFactory.CreateInstance<FileAssessment>();
+            file.Run(ref args);
 
-            IFilePathValidation filePathValidation = Factory.CreateInstance<IFilePathValidation, FilePath>();
-            if (!filePathValidation.IsValidated(args))
-                return -1;
+            IFilePathValidation filePathValidation = IFactory.CreateInstance<FilePath>();
+            var result = filePathValidation.IsValidated(args);
+            filePathValidation.ShowMessageAfterValidation(result.Message);
 
-            IXDocumentTransistor xDocTransistor = Factory.CreateInstance<IXDocumentTransistor, XDocumentTransistor>();
+            if (result.ResultStatus != FilePathResultStatus.Success) return -1;
 
+            IXDocumentTransistor xDocTransistor = IFactory.CreateInstance<XDocumentTransistor>();
             xDocTransistor.Start();
 
+
+            Logger.LogFinish();
 
             return 0;
         }

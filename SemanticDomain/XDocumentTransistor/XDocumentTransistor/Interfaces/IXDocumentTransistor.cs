@@ -5,11 +5,7 @@ namespace QuantumEngine.UnrealMotion.SemanticSystem.Interfaces
 {
     public interface IXDocumentTransistor
     {
-       void Start();
+        void Run();
     } 
 
-    public interface SystemExceptionDocument
-    {
-        void End();
-    }
 }

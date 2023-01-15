@@ -3,8 +3,9 @@
 
 namespace QuantumEngine.UnrealMotion.CoreSystem.Interfaces
 {
-    public interface IFilePathValidation
+    internal interface IFilePathValidation
     {
-        bool IsValidated(string[] args);
+        (FilePathResultStatus ResultStatus, string Message) IsValidated(string[] args);
+        void ShowMessageAfterValidation(string message);
     }
 }
