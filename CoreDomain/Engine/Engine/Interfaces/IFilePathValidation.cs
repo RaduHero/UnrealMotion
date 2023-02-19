@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace QuantumEngine.UnrealMotion.CoreSystem.Interfaces
 {
     internal interface IFilePathValidation

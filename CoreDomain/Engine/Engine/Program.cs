@@ -22,7 +22,7 @@ namespace QuantumEngine.UnrealMotion.CoreSystem.Engine
             if (result.ResultStatus != FilePathResultStatus.Success) return -1;
 
             IXDocumentTransistor xDocTransistor = IFactory.CreateInstance<XDocumentTransistor>();
-            xDocTransistor.Start();
+            xDocTransistor.Run(args[0]);
 
 
             Logger.LogFinish();

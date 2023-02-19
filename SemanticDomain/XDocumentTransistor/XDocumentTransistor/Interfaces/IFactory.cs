@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace QuantumEngine.UnrealMotion.SemanticSystem.Interfaces
 {
     internal interface IFactory

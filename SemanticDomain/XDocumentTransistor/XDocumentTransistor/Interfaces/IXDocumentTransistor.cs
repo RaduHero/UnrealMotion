@@ -5,7 +5,7 @@ namespace QuantumEngine.UnrealMotion.SemanticSystem.Interfaces
 {
     public interface IXDocumentTransistor
     {
-        void Run();
+        void Run(string filePath);
     } 
 
 }
