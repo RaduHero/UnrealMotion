@@ -24,7 +24,6 @@ namespace QuantumEngine.UnrealMotion.CoreSystem.Engine
             IXDocumentTransistor xDocTransistor = IFactory.CreateInstance<XDocumentTransistor>();
             xDocTransistor.Run(args[0]);
 
-
             Logger.LogFinish();
 
             return 0;

@@ -16,7 +16,6 @@ namespace Engine
             {
                 Console.WriteLine($"{className}.{methodName}");
             }
-
         }
 
         public static void LogStart()

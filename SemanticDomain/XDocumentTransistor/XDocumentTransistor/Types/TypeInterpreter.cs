@@ -90,6 +90,13 @@ namespace QuantumEngine.UnrealMotion.SemanticSystem.Types
                 stringBuilderVector[i].Append(data[i]);
                 char[] charVector = data[i].ToCharArray();
                 int[] indexesOfStringMark = charVector.Select((x, ix) => (x,ix)).Where((obj) => obj.x == '"').Select(obj => obj.ix).ToArray();
+
+                if (indexesOfStringMark.Length == 0)
+                    return ValueTask.CompletedTask;
+
+                if (indexesOfStringMark.Length % 2 != 0)
+                    return ValueTask.FromException(new Exception("A double quotation mark is incompleted."));
+
                 int[] indexesOfSpace = charVector.Select((x, ix) => (x, ix)).Where((obj) => obj.x == ' ').Select(obj => obj.ix).ToArray();
 
                 int k = 0;
